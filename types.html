@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn all about different types of turtles, their habitats, and conservation efforts.">
+    <title>Different Types of Turtles</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Header and Hero Section -->
+     <div class="hero">
+        <div class="overlay"></div>
+        <header>
+            <button id="navbarToggle" type="button" title="Navigation Toggle">
+                <i class="navbar-toggle-icon fas fa-bars"></i>
+            </button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="types.html">Types of Turtles</a></li>
+                        <li><a href="conservation.html">Conservation</a></li>
+                        <li><a href="fun-facts.html">Fun Facts</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+        </header>
+
+     
+         <!-- Hero Section -->
+         <section class="hero-content">
+             <div class="hero-text">
+                 <h1>Discover the Various <br> Types of Turtles</h2>
+                 <p>Explore different species, learn about their habitats, and discover how you can help protect these incredible creatures.</p>
+                </div>
+         </section>
+     </div>
+
+     <div class="species-filter">
+        <h2>Explore Turtle Species</h2>
+        <form class="filter-form">
+            <label for="turtle-type">Select a type of turtle:</label>
+            <select id="turtle-type">
+                <option value="all">All</option>
+                <option value="Sea Turtle">Sea Turtles</option>
+                <option value="Freshwater Turtle">Freshwater Turtles</option>
+                <option value="Tortoise">Tortoises</option>
+            </select>
+        </form>
+        <div id="results"></div>
+    </div>
+
+    <hr class="hr">
+
+    <section class="security-info">
+        <h2>Preventing Cross-Site Scripting (XSS)</h2>
+        <p>
+            Cross-Site Scripting (XSS) is a vulnerability that allows attackers to inject
+            malicious scripts into a webpage. These scripts can execute in the browser
+            of unsuspecting users, compromising their data and security.
+        </p>
+        <p>
+            In our project, we identified a potential XSS vulnerability in the
+            "Filtered Results" section, where turtle data is dynamically added to the page.
+            If the `innerHTML` property is used to insert content, it could execute harmful
+            scripts, such as:
+            <code>&lt;script&gt;alert('Hacked!')&lt;/script&gt;</code>
+        </p>
+        <p>
+            To address this, we use the `textContent` property for untrusted data (like
+            turtle names and descriptions). This ensures the data is treated as plain text,
+            preventing scripts from being executed.
+        </p>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span class="footer-year"></span> Different Types of Turtles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
