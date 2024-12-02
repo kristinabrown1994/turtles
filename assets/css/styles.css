@@ -32,6 +32,7 @@ ul {
 	text-align: center;
 	color: #fff;
 	position: relative;
+	overflow-x: hidden;
 }
 
 .overlay {
