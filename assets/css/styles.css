@@ -1,5 +1,7 @@
+/* Google Fonts Import */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* CSS Variable */
 :root {
 	--header-color-transition: all 0.3s ease;
 }
@@ -8,11 +10,13 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
 
 body {
 	font-family: "Poppins", sans-serif;
 	background-color: #f4f4f4;
+	overflow-x: hidden;
 }
 
 a {
@@ -23,6 +27,7 @@ ul {
 	list-style: none;
 }
 
+/* .hero & .overlay are reused on all pages */
 .hero {
 	background: url("../images/turtle-1.jpg") no-repeat center center/cover;
 	height: 100vh;
@@ -32,7 +37,6 @@ ul {
 	text-align: center;
 	color: #fff;
 	position: relative;
-	overflow-x: hidden;
 }
 
 .overlay {
@@ -46,6 +50,9 @@ ul {
 	height: 100%;
 }
 
+/* NAVIGATION STYLING START */
+
+/* Button that handles opening and closing the mobile navigation */
 #navbarToggle {
 	position: absolute;
 	top: 1rem;
@@ -58,6 +65,7 @@ ul {
 	z-index: 999;
 }
 
+/* Icon within the button (Font Awesome) */
 #navbarToggle i {
 	font-size: 1.6rem;
 	color: #fff;
@@ -67,16 +75,16 @@ nav {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100vh;
-	background: #0f1424;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background: #0f1424;
 	transform: translateX(100%);
 	transition: all 0.3s ease;
-	z-index: 998;
+	z-index: 998; 
 }
 
 nav.active {
@@ -96,17 +104,16 @@ nav a {
 
 @media screen and (min-width: 1024px) {
 	header {
-		height: 80px;
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		z-index: 999;
+		height: 80px;
+		width: 100%;
 		transition: var(--header-color-transition);
-		/* background: #0f142400; */
+		z-index: 999;
 	}
 
 	#navbarToggle {
@@ -134,9 +141,9 @@ nav a {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		height: inherit;
 		width: 100%;
 		transform: translateX(0);
-		height: inherit;
 		background: transparent;
 	}
 
@@ -151,12 +158,12 @@ nav a {
 /* Hero Section Styling START */
 
 .hero-content {
-	z-index: 1;
-	max-width: 600px;
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	max-width: 600px;
+	width: 100%;
+	z-index: 1;
 }
 
 .hero-text h1 {
@@ -180,9 +187,9 @@ nav a {
 }
 
 .hero-content a {
+	padding: 10px 20px;
 	background: #395a72;
 	color: #fff;
-	padding: 10px 20px;
 	border-radius: 5px;
 	font-size: 1.2rem;
 }
@@ -192,37 +199,37 @@ nav a {
 /* Home Page Highlights Section Styling */
 
 .highlights {
-	background: #f4f4f4;
 	padding: 2rem 1rem;
+	background: #f4f4f4;
 }
 
 .highlights .container {
+	margin-top: 2rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	gap: 30px;
-	margin-top: 2rem;
 }
 
 @media screen and (min-width: 768px) {
 	.highlights .container {
+		margin-top: 2rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: row;
 		gap: 20px;
-		margin-top: 2rem;
 	}
 }
 
 .highlight {
-	background: #f4f4f4;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	text-align: center;
 	max-width: 400px;
 	width: 100%;
+	background: #f4f4f4;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .highlight img {
@@ -240,13 +247,13 @@ nav a {
 }
 
 .highlight a {
+	margin: 1rem 0 1.4rem;
+	padding: 9px 20px;
+	display: inline-block;
 	background: #395a72;
 	color: #fff;
-	padding: 9px 20px;
 	border-radius: 5px;
 	font-size: 1.2rem;
-	margin: 1rem 0 1.4rem;
-	display: inline-block;
 }
 
 /* Footer Styling */
@@ -254,44 +261,45 @@ nav a {
 /* ABOUT PAGE Styling START */
 
 .about-content {
-	max-width: 1200px;
-	width: 100%;
 	margin: 2rem auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 3rem;
+	max-width: 1200px;
+	width: 100%;
 }
 
 .about-content .info-section {
-	text-align: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	max-width: 900px;
 	width: 100%;
+	text-align: center;
 }
 .about-content .image-container {
 	margin-top: 1rem;
-	max-width: 1000px;
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
+	max-width: 1000px;
+	width: 100%;
 }
 
+/* Media Query that handles breakpoints starting at 768px */
 @media screen and (min-width: 768px) {
 	.about-content .image-container {
 		margin-top: 1rem;
-		max-width: 1000px;
-		width: 100%;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 		gap: 20px;
+		max-width: 1000px;
+		width: 100%;
 	}
 }
 
@@ -303,12 +311,12 @@ nav a {
 }
 
 .about-content .role {
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 20px;
+	width: 100%;
 }
 
 /* ABOUT PAGE Styling END */
@@ -345,13 +353,6 @@ nav a {
 
 /* CONSERVATION PAGE Styling END */
 
-footer {
-	background: transparent;
-	color: #000;
-	text-align: center;
-	padding: 1rem 0;
-	font-size: clamp(0.8rem, 2vw, 1rem);
-}
 
 /* TYPES OF TURTLES Styling START */
 
@@ -370,28 +371,28 @@ footer {
 .species-filter .filter-form select {
 	margin-top: 5px;
 	padding: 10px;
+	width: 150px;
 	border-radius: 5px;
 	border: 1px solid #ddd;
-	width: 150px;
 }
 
 #results {
 	margin: auto;
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
+	gap: 10px;
 	max-width: 1200px;
 	width: 100%;
-	gap: 10px;
-	justify-content: center;
 }
 
 .turtle-card {
 	margin-top: 2rem;
 	padding: 10px;
-	border-radius: 5px;
-	text-align: left;
 	max-width: 400px;
 	width: 100%;
+	border-radius: 5px;
+	text-align: left;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -406,40 +407,36 @@ footer {
 }
 
 .security-info {
+	margin: auto;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 20px;
 	max-width: 900px;
 	width: 100%;
-	margin: auto;
-	gap: 20px;
 }
 
 /* TYPES OF TURTLES Styling END */
 
 /* Fun Fact Styling START */
 .fun-fact-section {
-	z-index: 1;
 	max-width: 700px;
 	width: 98%;
+	z-index: 1;
 }
 .fun-fact-section .fun-fact {
-	font-size: clamp(1rem, 5vw, 1.8rem);
 	margin-bottom: 10px;
+	font-size: clamp(1rem, 5vw, 1.8rem);
 	color: #fff;
 }
 
 .fun-fact-section .btn {
-	display: inline-block;
 	padding: 10px 20px;
 	background: #395a72;
 	color: white;
-	text-decoration: none;
 	border-radius: 5px;
-	transition: background 0.3s ease;
 	border: none;
-	font-family: "Poppins", sans-serif;
 	font-size: 1.2rem;
 	cursor: pointer;
 }
@@ -449,42 +446,57 @@ footer {
 /* Contact Form Styling START */
 
 /* Contact Form Section */
-.contact-form {
-	width: 90%;
-	max-width: 600px;
+.contact-form-section {
 	margin: 20px auto;
-	padding: 20px;
-	background: #fff;
-	border-radius: 8px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
 }
 
-.contact-form h2 {
-	margin-bottom: 10px;
+.contact-form-section h2 {
+	font-size: 2rem;
 	color: #333;
 	text-align: center;
 }
 
-.contact-form p {
-	margin-bottom: 20px;
+.contact-form-section p {
 	text-align: center;
 	color: #666;
 }
 
-.form-group {
-	margin-bottom: 15px;
-	border: none;
+#contactForm {
+	margin-top: 20px;
+	padding: 20px;
+	max-width: 600px;
+	width: 90%;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
 }
 
-.form-group label {
+#contactForm .form-group {
+	width: 100%;
+	border: none;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+#contactForm .form-group label {
 	display: block;
-	margin-bottom: 5px;
 	font-weight: bold;
 	color: #333;
 }
 
-.form-group input,
-.form-group textarea {
+#contactForm .form-group input,
+#contactForm .form-group textarea {
 	width: 100%;
 	padding: 10px;
 	border: 1px solid #ccc;
@@ -494,21 +506,28 @@ footer {
 	transition: border-color 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+#contactForm .form-group input:focus,
+#contactForm .form-group textarea:focus {
 	border-color: #4caf50;
 }
 
-.contact-form .btn {
-	display: block;
-	width: 100%;
+#contactForm .btn {
 	padding: 10px;
+	width: 100%;
 	background-color: #4caf50;
 	color: white;
 	font-size: 1rem;
 	border: none;
 	border-radius: 4px;
-	cursor: pointer;
 	transition: background-color 0.3s ease;
+	cursor: pointer;
 }
 
+
+footer {
+	padding: 1rem 0;
+	background: transparent;
+	color: #000;
+	text-align: center;
+	font-size: clamp(0.8rem, 2vw, 1rem);
+}
