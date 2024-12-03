@@ -18,18 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	// **Navbar Toggle Functionality**
 	// This controls the mobile navigation menu and changes the menu icon
 	const mobileNav = document.querySelector("nav"); // The navigation menu
-	const navbarToggle = document.querySelector("#navbarToggle i"); // The menu toggle icon
+	const navbarToggle = document.querySelector("#navbarToggle"); // The
+	const navbarToggleIcon = document.querySelector("#navbarToggle i"); // The menu toggle icon
 	if (navbarToggle && mobileNav) {
 		navbarToggle.addEventListener("click", () => {
 			// Check if the current icon is the menu icon (fa-bars)
-			if (navbarToggle.classList.contains("fa-bars")) {
+			if (navbarToggleIcon.classList.contains("fa-bars")) {
 				mobileNav.classList.add("active"); // Show the mobile menu
-				navbarToggle.classList.remove("fa-bars");
-				navbarToggle.classList.add("fa-times"); // Change icon to "X" (fa-times)
+				navbarToggleIcon.classList.remove("fa-bars");
+				navbarToggleIcon.classList.add("fa-times"); // Change icon to "X" (fa-times)
 			} else {
 				mobileNav.classList.remove("active"); // Hide the mobile menu
-				navbarToggle.classList.remove("fa-times");
-				navbarToggle.classList.add("fa-bars"); // Change icon back to menu (fa-bars)
+				navbarToggleIcon.classList.remove("fa-times");
+				navbarToggleIcon.classList.add("fa-bars"); // Change icon back to menu (fa-bars)
 			}
 		});
 	}
